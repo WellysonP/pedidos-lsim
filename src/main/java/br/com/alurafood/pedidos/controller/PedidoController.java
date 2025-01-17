@@ -60,6 +60,6 @@ public class PedidoController {
 
         @GetMapping("/porta")
         public String obterPorta(@Value("${local.server.port}") String porta) {
-            return String.format("requisição respondida na porta: %s", porta);
+            return String.format("porta: %s", porta);
         }
 }

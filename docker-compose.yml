@@ -1,0 +1,22 @@
+services:
+  pedidos-lsim:
+    image: pedidos-lsim
+    container_name: pedidos-lsim
+    build:
+      context: .
+    networks:
+      - lsim-network
+    depends_on:
+      - server-lsim
+    environment:
+      - DB_HOST=mysql-lsim
+      - DB_PORT=3306
+      - DB_NAME=lsimfood-pedidos
+      - DB_USERNAME=root
+      - DB_PASSWORD=mysql
+      - SERVER_PORT=0
+      - EUREKA_SERVER_URL=http://server-lsim:8761/eureka/
+
+networks:
+  lsim-network:
+    external: true
