@@ -22,10 +22,6 @@ WORKDIR /app
 # Instalar bash (caso não esteja instalado)
 RUN apk add --no-cache bash
 
-
-# Instalar bash (caso não esteja instalado)
-RUN apk add --no-cache bash
-
 # Copiar o JAR gerado da etapa de construção
 COPY --from=builder /app/target/pedidos-0.0.1-SNAPSHOT.jar /app/pedidos.jar
 
